@@ -21,12 +21,12 @@ window.K_Mock_Demo = {
     },
     Ajax: {
         data: {
-            'http://k-inner-report.404mzk.com/v1': {
+            'http://k-inner-report.aaa.com/v1': {
                 success: {
                     v1: 1
                 }
             },
-            'http://k-inner-report.404mzk.com/v2': {
+            'http://k-inner-report.bbb.com/v2': {
                 status: 'error',
                 success: {
                     v2: 2
@@ -38,10 +38,6 @@ window.K_Mock_Demo = {
                 }
             }
         },
-        init: function(){
-            return {
 
-            }
-        }
     }
 }

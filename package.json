@@ -1,6 +1,6 @@
 {
   "name": "k-mock",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "description": "Imitate the source of the other way Edit,eg: json|jsonp|client_api",
   "author": "maizhikun",

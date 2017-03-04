@@ -1,12 +1,13 @@
 import Utils from './Utils'
 import XHR from './Xhr'
+
 var K_Mock = function(K_Mock){
   //this.K_Mock = K_Mock
 
   //this.k_mock_jsonp = 'jsonp'
 
   if (location.search.indexOf('debug=true') === -1) return this
-  this.real = true
+  this.mock_status = true
   
   K_Mock = this.init_ajax(K_Mock);
 

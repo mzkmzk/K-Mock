@@ -13,7 +13,7 @@
     var _k_mock = new window.K_Mock(window.K_Mock_Demo)
     $.ajax({
       dataType: "json",
-      url: 'http://k-inner-report.404mzk.com/v1',
+      url: 'http://k-inner-report.aaa.com/v1',
       data: {},
       success: function(data){
         console.log('success' + JSON.stringify(data));
@@ -24,7 +24,7 @@
     });
     $.ajax({
       dataType: "json",
-      url: 'http://k-inner-report.404mzk.com/v2',
+      url: 'http://k-inner-report.bbb.com/v2',
       data: {},
       success: function(data){
         console.log('success' + JSON.stringify(data));
@@ -35,9 +35,9 @@
     });
 
     $.ajax({
-      dataType: _k_mock.real ? "json" : "jsonp",
+      dataType: _k_mock.mock_status ? "json" : "jsonp",
       callback:'jsonp',
-      url: 'http://dyactive2.vip.xunlei.com/iface/?action=init2017&actid=xunleiindex',
+      url: 'http://dyactive2.vip.aaa.com/iface/?action=init2017&actid=bbb',
       data: {},
       success: function(data){
         console.log('success' + JSON.stringify(data));

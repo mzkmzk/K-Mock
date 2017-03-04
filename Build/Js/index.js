@@ -16,7 +16,7 @@ var K_Mock = function K_Mock(_K_Mock) {
   //this.k_mock_jsonp = 'jsonp'
 
   if (location.search.indexOf('debug=true') === -1) return this;
-  this.real = true;
+  this.mock_status = true;
 
   _K_Mock = this.init_ajax(_K_Mock);
 

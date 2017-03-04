@@ -1,7 +1,7 @@
 {
   "name": "k-mock",
   "author": "maizhikun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Imitate the source of the other way Edit,eg: json|jsonp|client_api",
   "main": "./Js/index.js",
   "module": "./Js/index.es.js",
