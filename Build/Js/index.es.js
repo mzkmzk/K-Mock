@@ -1,5 +1,15 @@
-import Utils from './Utils';
-import XHR from './Xhr';
+'use strict';
+
+var _Utils = require('./Utils');
+
+var _Utils2 = _interopRequireDefault(_Utils);
+
+var _Xhr = require('./Xhr');
+
+var _Xhr2 = _interopRequireDefault(_Xhr);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
 var K_Mock = function K_Mock(_K_Mock) {
   //this.K_Mock = K_Mock
 
@@ -16,7 +26,7 @@ var K_Mock = function K_Mock(_K_Mock) {
 K_Mock.prototype.init = function (K_Mock) {
 
   //K_Mock = K_Mock || this.K_Mock
-  Utils.each(K_Mock, function (element) {
+  _Utils2['default'].each(K_Mock, function (element) {
     if (element.init) {
       element.init.call(null);
     }
@@ -27,7 +37,7 @@ function mock_jsonp(XHR) {
   document.addEventListener('load', function (e) {
 
     var match_array, item;
-    if (e && e.path && e.path[0] && e.path[0].src && (match_array = e.path[0].src.match(/callback=(\w+)/)) && typeof match_array[1] === 'string' && window[match_array[1]] && (item = Utils.find_mocked_item({ url: e.path[0].src }, XHR.Mock._mocked))) {
+    if (e && e.path && e.path[0] && e.path[0].src && (match_array = e.path[0].src.match(/callback=(\w+)/)) && typeof match_array[1] === 'string' && window[match_array[1]] && (item = _Utils2['default'].find_mocked_item({ url: e.path[0].src }, XHR.Mock._mocked))) {
       window[match_array[1]].apply(null, [item.template]);
     }
     //console.log(e);
@@ -37,15 +47,15 @@ function mock_jsonp(XHR) {
 
 K_Mock.prototype.init_ajax = function (K_Mock) {
   if (K_Mock.Ajax && K_Mock.Ajax.data) {
-    XHR.Mock = {
+    _Xhr2['default'].Mock = {
       _mocked: {}
     };
     K_Mock.Ajax.init = function () {
-      window.XMLHttpRequest = XHR; //拦截原生xhr
-      mock_jsonp(XHR);
+      window.XMLHttpRequest = _Xhr2['default']; //拦截原生xhr
+      mock_jsonp(_Xhr2['default']);
 
-      Utils.each(K_Mock.Ajax.data, function (element, key) {
-        XHR.Mock._mocked[key] = {
+      _Utils2['default'].each(K_Mock.Ajax.data, function (element, key) {
+        _Xhr2['default'].Mock._mocked[key] = {
           rurl: key,
           template: element.success,
           status: element.status

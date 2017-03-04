@@ -10,7 +10,7 @@ const debug = process.env.NODE_ENV !== 'production';
 
 
 
-var entries = getEntry('Src/Js/Index.js');//搜索主js
+var entries = getEntry('Src/Js/index.js');//搜索主js
 //var entries = getEntry('src/js/**/*.js', 'src/js/');//搜索所有主js
 //entries['lib'] =['jquery','underscore','k-logging','k-report','thunderjs']; //说明lib模块
 //entries['lib'] = [];
@@ -31,11 +31,11 @@ var config = {
   module: {
     loaders: [ //加载器
       {
-              test: /\.js$/,
-              loaders: ['es3ify','babel']
-              //exclude: __dirname + '/node_modules',
-              //include: __dirname + '/Src',
-          },
+        test: /\.js$/,
+          loaders: ['es3ify','babel']
+          //exclude: __dirname + '/node_modules',
+          //include: __dirname + '/Src',
+      },
           /*{
               test: /\.js$/,
               loader: 'es3ify'
