@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src="../public/js/index.js"></script>
+     <script id="abc" type="text/javascript" src="K_Mock_Demo.js"></script>
+  </head>
+  <body>
+    
+    <script type="text/javascript">
+
+    var _k_mock = new window.K_Mock(window.K_Mock_Demo)
+    $.ajax({
+      dataType: "json",
+      url: 'http://k-inner-report.404mzk.com/v1',
+      data: {},
+      success: function(data){
+        console.log('success' + JSON.stringify(data));
+      },
+      error: function(data){
+        console.log('error' + JSON.stringify(data));
+      }
+    });
+    $.ajax({
+      dataType: "json",
+      url: 'http://k-inner-report.404mzk.com/v2',
+      data: {},
+      success: function(data){
+        console.log('success' + JSON.stringify(data));
+      },
+      error: function(data){
+        console.log('error' + JSON.stringify(data));
+      }
+    });
+
+    $.ajax({
+      dataType: _k_mock.real ? "json" : "jsonp",
+      callback:'jsonp',
+      url: 'http://dyactive2.vip.xunlei.com/iface/?action=init2017&actid=xunleiindex',
+      data: {},
+      success: function(data){
+        console.log('success' + JSON.stringify(data));
+      }
+    });
+    //document.body.addEventListener('keyup',function(event){
+      //console.log("".fromCharCode(event.keyCode));
+    //})
+    
+/*
+        $(window).on('load',function(e){
+      //alert('window laod ');
+
+      console.log(e);
+
+    })
+    window.addEventListener('load',function(e){
+      //alert('window laod ');
+
+      console.log(e);
+
+    },true);
+    document.addEventListener('load',function(e){
+      e.path[0].src="http://dyactive2.vip.xunlei.com/iface/?action=init&actid=kn2017lyg&callback=jQuery1111014667149897197995_1488524428759&_=1488524428760"; 
+      var a = $(e.path[0]);
+      //$(e.path[0]).trigger('error');
+     // e.path[0].outerText = 'asdsa()';
+      // e.path[0].onerror();
+    console.log(e);
+    },true);
+    $(document).on('load',function(e){
+      console.log(e)
+    })
+    document.body.addEventListener('load',function(e){
+      //alert('window laod ');
+      //e.stopPropagation();
+      //e.preventDefault();
+      console.log($(e));
+  //    return false;
+    },true);/*
+    $(document).on('load',function(){
+      alert('window laod ')
+    },true)
+     $('body').on('load',function(){
+      alert('window laod ')
+    },true)*/
+    </script>
+  </body>
+</html>

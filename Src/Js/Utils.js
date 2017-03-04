@@ -123,4 +123,29 @@ Util.heredoc = function heredoc(fn) {
 
 Util.noop = function() {}
 
+
+Util.find_mocked_item = function(options, mocked) {
+    for (var sUrlType in mocked) {
+        var item = mocked[sUrlType]
+        if (
+            (!item.rurl || match(item.rurl, options.url)) /*k&&
+            (!item.rtype || match(item.rtype, options.type.toLowerCase()))*/
+        ) {
+            // console.log('[mock]', options.url, '>', item.rurl)
+            return item
+        }
+    }
+
+    function match(expected, actual) {
+        if (Util.type(expected) === 'string') {
+            return   actual.indexOf(expected) !== -1
+            //return expected === actual
+        }
+        if (Util.type(expected) === 'regexp') {
+            return expected.test(actual)
+        }
+    }
+
+}
+
 module.exports = Util

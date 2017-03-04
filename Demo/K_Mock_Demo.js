@@ -1,4 +1,4 @@
-window.K_Mock = {
+window.K_Mock_Demo = {
     Client: {
         init: function(){
              window.native_my = {}
@@ -17,6 +17,31 @@ window.K_Mock = {
                 });
                 c.apply(null,[d])
              };
+        }
+    },
+    Ajax: {
+        data: {
+            'http://k-inner-report.404mzk.com/v1': {
+                success: {
+                    v1: 1
+                }
+            },
+            'http://k-inner-report.404mzk.com/v2': {
+                status: 'error',
+                success: {
+                    v2: 2
+                }
+            },
+            'http://dyactive2.vip.aaa.com/iface/?action=init2017&actid=bbb': {
+                success: {
+                    v3: 3
+                }
+            }
+        },
+        init: function(){
+            return {
+
+            }
         }
     }
 }

@@ -12,8 +12,8 @@ const debug = process.env.NODE_ENV !== 'production';
 
 var entries = getEntry('Src/Js/Index.js');//搜索主js
 //var entries = getEntry('src/js/**/*.js', 'src/js/');//搜索所有主js
-entries['lib'] =['jquery','underscore','k-logging','k-report','thunderjs']; //说明lib模块
-
+//entries['lib'] =['jquery','underscore','k-logging','k-report','thunderjs']; //说明lib模块
+//entries['lib'] = [];
 //var entries = getEntry('src/js/**/*.js');
 
 var chunks = Object.keys(entries);
@@ -23,7 +23,10 @@ var config = {
     path: path.join(__dirname, 'public'),
     //publicPath: '/v2017/k_pc/public/',
     filename: 'js/[name].js',
-    chunkFilename: 'js/[id].chunk.js?[chunkhash]'
+    chunkFilename: 'js/[id].chunk.js?[chunkhash]',
+    library: 'K_Mock',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
   },
   module: {
     loaders: [ //加载器
@@ -64,11 +67,11 @@ var config = {
         ]*/
   },
   plugins: [
-    new CommonsChunkPlugin({
+    /*new CommonsChunkPlugin({
       name: 'lib', // 将公共模块提取，生成名为`lib`的chunk
       chunks: chunks,
       //minChunks: chunks.length // 提取所有entry共同依赖的模块
-    }),
+    }),*/
     new ExtractTextPlugin('css/[name].css'), //单独使用link标签加载css并设置路径，相对于output配置中的publickPath
     debug ? function() {} : new UglifyJsPlugin({ //压缩代码
       compress: {
