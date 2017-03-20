@@ -54,7 +54,7 @@ var _k_mock = new window.K_Mock(window.K_Mock_Demo)
 
 read ./Demo/ 
 
-Installation
+# Installation
 
 ```shell
 <script src="./publish/js/index.js"></script>
